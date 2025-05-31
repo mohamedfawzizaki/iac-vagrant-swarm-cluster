@@ -79,7 +79,8 @@ This repository sets up a full **multi-node Docker Swarm cluster** using **Vagra
 │   │   └── error.html
 │   └── redis/
 │       └── redis.env.example
-├── docker-stack.yml               # Swarm stack definition
+├── secrets/  
+├── docker-stack.yaml               # Swarm stack definition
 
 ````
 
@@ -91,7 +92,7 @@ This repository sets up a full **multi-node Docker Swarm cluster** using **Vagra
 
 ```bash
 git clone https://github.com/mohamedfawzizaki/iac-vagrant-swarm-cluster.git
-cd your-repo-name
+cd iac-vagrant-swarm-cluster
 ````
 
 ### 2. Spin up Vagrant Swarm nodes
@@ -143,8 +144,8 @@ Access the services:
 | Service        | Description                         | Port(s)         |
 | -------------- | ----------------------------------- | --------------- |
 | `frontend`     | React app behind Nginx              | 80, 443         |
-| `base_backend` | Node.js backend API                 | 3000 (internal) |
-| `proxy`        | External-facing Nginx reverse proxy | —               |
+| `base_backend` | Node.js backend API app behind Nginx| 3000 (internal) |
+| `proxy`        | Nginx reverse proxy                 | —               |
 | `mysql-db`     | MySQL 8.0 database                  | internal only   |
 | `phpmyadmin`   | DB admin panel                      | 8080            |
 | `redis`        | Redis with password protection      | internal only   |
@@ -180,6 +181,8 @@ vagrant destroy -f
 To remove the Swarm stack:
 
 ```bash
+vagrant ssh leader-node
+cd /vagrant
 docker stack rm webstack
 ```
 
