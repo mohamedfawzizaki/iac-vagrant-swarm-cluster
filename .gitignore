@@ -1,0 +1,37 @@
+### Virtual Environment ###
+.vagrant/
+Vagrantfile.local
+
+### Environment Files ###
+# Ignore all .env files except examples
+*.env
+!*.env.example
+
+### Logs & Runtime Data ###
+*.log
+*.pid
+*.seed
+*.swp
+/secrets/
+
+### OS-Specific Junk ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+### IDE Files ###
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+### Docker Temporary Files ###
+docker-compose.override.yml
+docker-compose.local.yml

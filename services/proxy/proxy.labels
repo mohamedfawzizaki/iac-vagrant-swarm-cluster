@@ -1,0 +1,3 @@
+com.example.service="proxy"
+com.example.agent="nginx"
+com.example.environment="production"
