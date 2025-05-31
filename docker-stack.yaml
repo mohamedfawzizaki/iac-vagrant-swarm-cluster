@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   frontend:
-    image: mohamedfawzi/react-nginx-image:v1.0.0
+    image: mohamedfawzi/react-nginx-image:v1.1.0
     ports:
       - "80:80"
       - "443:443"
@@ -45,7 +45,7 @@ services:
       start_period: 5s
 
   base_backend:
-    image: mohamedfawzi/backend-nodejs-image:v1.0.0
+    image: mohamedfawzi/backend-nodejs-image:v1.1.0
     expose:
       - "3000"
     env_file:
